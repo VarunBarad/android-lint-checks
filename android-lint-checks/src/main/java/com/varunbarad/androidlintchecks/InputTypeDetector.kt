@@ -10,7 +10,7 @@ class InputTypeDetector : LayoutDetector() {
         internal val ISSUE_MISSING_INPUT_TYPE = Issue.create(
             id = "MissingInputType",
             briefDescription = "Specify inputType attribute to get proper keyboard shown by system.",
-            explanation = "",
+            explanation = "Specify inputType attribute to get proper keyboard shown by system.",
             category = Category.USABILITY,
             priority = 8,
             severity = Severity.ERROR,
