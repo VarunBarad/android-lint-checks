@@ -1,0 +1,2 @@
+include ':app', ':android-lint-checks'
+rootProject.name='Android Lint Checks Sample'
