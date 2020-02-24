@@ -10,16 +10,16 @@ class WebViewMetricsMetaTagDetector : ManifestDetector() {
         @JvmStatic
         internal val ISSUE_MISSING_WEBVIEW_METRICS_META_TAG = Issue.create(
             id = "MissingWebViewMetricsMetaTag",
-            briefDescription = "Specify whether you want to opt-out of metrics tracking via WebView",
-            explanation = "Specify whether you want to opt-out of metrics tracking via WebView",
-            category = Category.USABILITY,
+            briefDescription = "Specify whether you want to opt-out of metrics tracking via WebView.",
+            explanation = "WebView can upload diagnostic data to Google. You can opt-out by specifying a `meta-data` tag under your `application` tag in manifest.",
+            category = Category.SECURITY,
             priority = 8,
             severity = Severity.ERROR,
             implementation = Implementation(
                 WebViewMetricsMetaTagDetector::class.java,
                 Scope.MANIFEST_SCOPE
             )
-        )
+        ).addMoreInfo("https://developer.android.com/guide/webapps/managing-webview#metrics")
     }
 
     override fun getApplicableElements(): Collection<String>? {
