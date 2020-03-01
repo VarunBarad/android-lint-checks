@@ -22,3 +22,19 @@ In your project directory, run the following command
 ```
 
 This will run the lint tool on your complete project, including any custom lint-checks you may have added or imported.
+
+## Running lint check before every app assemble step
+
+If you want to run the lint checks every time you hit run in your Android studio, include the below block inside your `android` block
+
+```groovy
+android {
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def lintTask = tasks["lint${variant.name.capitalize()}"]
+            output.assemble.dependsOn lintTask
+        }
+    }
+    ...
+}
+```
