@@ -13,6 +13,12 @@ dependencies {
 }
 ```
 
-## ToDo
+## Run the lint check
 
-- Add steps in README to show how to use the lint tool
+In your project directory, run the following command
+
+```shell
+./gradlew lint
+```
+
+This will run the lint tool on your complete project, including any custom lint-checks you may have added or imported.
