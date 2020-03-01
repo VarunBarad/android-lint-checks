@@ -8,7 +8,7 @@ In your module-level `build.gradle` file (generally `<project-dir>/app/build.gra
 
 ```groovy
 dependencies {
-    lintChecks "com.varunbarad:android-lint-checks:0.2.0"
+    lintChecks "com.varunbarad:android-lint-checks:0.2.1"
     ...
 }
 ```
