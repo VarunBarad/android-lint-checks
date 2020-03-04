@@ -38,3 +38,6 @@ android {
     ...
 }
 ```
+## To-Do
+
+1. Check for constraint-layout children not visible due to misalignment (example: `app:layout_constraintEnd_toStartOf="parent"`)
