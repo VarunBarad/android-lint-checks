@@ -34,7 +34,7 @@ android {
 
 dependencies {
     // Add this next line to include the library in your project's lint checks
-    lintChecks "com.varunbarad:android-lint-checks:0.2.0"
+    lintChecks "com.varunbarad:android-lint-checks:0.3.0"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
