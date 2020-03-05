@@ -2,6 +2,8 @@
 
 This is a sample android application project which shows the use of library which implements some custom lint checks that I find useful.
 
+[![](https://jitpack.io/v/com.varunbarad/android-lint-checks.svg)](https://jitpack.io/#com.varunbarad/android-lint-checks)
+
 ## Adding library to project
 
 In your module-level `build.gradle` file (generally `<project-dir>/app/build.gradle` add the following dependency
