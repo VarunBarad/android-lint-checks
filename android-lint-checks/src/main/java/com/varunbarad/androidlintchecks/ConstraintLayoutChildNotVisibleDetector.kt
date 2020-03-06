@@ -2,6 +2,7 @@ package com.varunbarad.androidlintchecks
 
 import com.android.tools.lint.detector.api.*
 import org.w3c.dom.Element
+import org.w3c.dom.Node
 
 class ConstraintLayoutChildNotVisibleDetector : LayoutDetector() {
     companion object {
@@ -38,12 +39,16 @@ class ConstraintLayoutChildNotVisibleDetector : LayoutDetector() {
     }
 
     override fun visitElement(context: XmlContext, element: Element) {
-        for (childView in element.childNodes.toList()) {
-            childView.attributes
-                .toPairedNameValueList()
-                .filter() { attribute ->
+        val childNodes: List<Node>? = element.childNodes?.toList()
+
+        if (childNodes != null) {
+            for (childView in childNodes) {
+                val attributes: List<Pair<String, String>>? =
+                    childView.attributes?.toPairedNameValueList()
+
+                attributes?.filter { attribute ->
                     PARENT_CONSTRAINT_ATTRIBUTE_NAMES.contains(attribute.first)
-                }.forEach { attribute ->
+                }?.forEach { attribute ->
                     if (attribute.second == "parent") {
                         context.report(
                             issue = ISSUE_POSSIBLE_INVISIBLE_VIEW,
@@ -52,6 +57,7 @@ class ConstraintLayoutChildNotVisibleDetector : LayoutDetector() {
                         )
                     }
                 }
+            }
         }
     }
 }
