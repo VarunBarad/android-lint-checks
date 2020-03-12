@@ -12,6 +12,7 @@ class LintRegistry : IssueRegistry() {
         get() = listOf(
             InputTypeDetector.ISSUE_MISSING_INPUT_TYPE,
             WebViewMetricsMetaTagDetector.ISSUE_MISSING_WEBVIEW_METRICS_META_TAG,
-            ConstraintLayoutChildNotVisibleDetector.ISSUE_POSSIBLE_INVISIBLE_VIEW
+            ConstraintLayoutChildNotVisibleDetector.ISSUE_POSSIBLE_INVISIBLE_VIEW,
+            LogWtfDetector.ISSUE_LOG_WTF
         )
 }
